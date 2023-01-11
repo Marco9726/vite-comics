@@ -82,7 +82,7 @@
                         </ul>
                     </div>
                     <div id="logo-container">
-                        <!-- <img :src="logo" alt="dc-logo" > -->
+                        <img :src="logo" alt="dc-logo" >
                     </div>
                 </div>
             </div>
@@ -118,6 +118,10 @@
     @use './styles/partials/_variables.scss' as *;
     @use './styles/partials/_mixins.scss' as *;
     @import url('https://fonts.googleapis.com/css2?family=Khula&display=swap');
+
+    footer{
+        overflow: hidden;
+    }
 
     #background-container{
         background-image: url('../public/img/footer-bg.jpg');
@@ -158,12 +162,14 @@
             #logo-container{
                 width: 45%;
                 height: 100%;
-                background-color: red;
+                display: flex;
+                align-items: center;
 
                 img{
                     width: 100%;
                     vertical-align: 265px;
-                    z-index: -1;
+                    z-index: 0;
+                    position: relative;
 
                 }
             }
@@ -173,6 +179,7 @@
     #last-container{
         background-color: rgb(48,48,48);
         position: relative;
+        
         .row{
             align-items: center;
 
