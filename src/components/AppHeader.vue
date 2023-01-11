@@ -6,36 +6,17 @@
                 logo: '../public/img/dc-logo.png',
                 itemActive: null,
                 nav: [
-                    {
-                     label: 'CHARACTERS',
-                    },
-                    {
-                     label: 'COMICS',
-                    },
-                    {
-                     label: 'MOVIES',
-                    },
-                    {
-                     label: 'TV',
-                    },
-                    {
-                     label: 'GAMES',
-                    },
-                    {
-                     label: 'COLLECTIBLES',
-                    },
-                    {
-                     label: 'VIDEOS',
-                    },
-                    {
-                     label: 'FANS',
-                    },
-                    {
-                     label: 'NEWS',
-                    },
-                    {
-                     label: 'SHOP',
-                    }
+                    
+                    'CHARACTERS',                        
+                    'COMICS',                              
+                    'MOVIES',                              
+                    'TV',                              
+                    'GAMES',                              
+                    'COLLECTIBLES',                              
+                    'VIDEOS',                              
+                    'FANS',                              
+                    'NEWS',                              
+                    'SHOP',               
 
                 ]
             }
@@ -60,7 +41,7 @@
                 <nav>
                     <ul>
                         <li v-for="(item,index) in nav" :key="index" :class="(index === itemActive ) ? 'active' : ''" @click="liActive(index)">
-                            <span>{{ item.label }}</span>
+                            <span>{{ item }}</span>
                         </li>
                     </ul>
                 </nav>
@@ -76,7 +57,7 @@
   @use './styles/partials/_mixins.scss' as *;
 
     header *:not(span){
-        height: 100%
+        height: 100%;
     }
 
     .row{
@@ -90,8 +71,12 @@
             @include flex-between;
             font-size: .8rem;
             font-weight: 600;
+
+            li:not(:last-child){
+                margin-right: 1.5rem;
+            }
+            
             li{
-                margin-left: 1.5rem;
                 &:hover{
                     cursor: pointer;
                     color: $brand-primary;
