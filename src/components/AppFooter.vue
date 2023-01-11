@@ -50,6 +50,13 @@
                             'DC Power Visa'
                         ]
                     }
+                ],
+                socials: [
+                    'footer-facebook.png',
+                    'footer-periscope.png',
+                    'footer-pinterest.png',
+                    'footer-twitter.png',
+                    'footer-youtube.png'
                 ]
             }
         }
@@ -59,12 +66,15 @@
 
 <template>
     <footer>
+        <!-- background container  -->
         <div id="background-container">
             <div class="main-container h-100">
                 <div class="row h-100">
-                    <div id="lists">
+                    <div id="lists"> 
+                        <!-- v-for per generare 4 ul  -->
                         <ul v-for="(item,index) in lists" :key="index">
                             <h4>{{ item.title }}</h4>
+                            <!-- v-for per generare gli li delle varie liste  -->
                             <li v-for="(item,index) in lists[index].list" :key="index"> 
                                 <a href="#">{{ item }}</a>
 
@@ -72,15 +82,30 @@
                         </ul>
                     </div>
                     <div id="logo-container">
-                        <img :src="logo" alt="dc-logo" >
+                        <!-- <img :src="logo" alt="dc-logo" > -->
                     </div>
                 </div>
             </div>
 
         </div>
+        <!-- ultimo container scuro -->
         <div id="last-container" class="h-100-px">
-            <div class="main-container">
-                
+            <div class="main-container h-100">
+                <div class="row h-100">
+                    <div id="sign-up">
+                        <a href="#">
+                            SIGN-UP NOW!
+                        </a>
+                    </div>
+                    <ul>
+                        <h4>FOLLOW US</h4>
+                        <!-- v-for per genere le 5 immagini dei social -->
+                        <li v-for="(item,index) in socials" :key="index">
+                            <img :src="`/public/img/${item}`" alt="#">
+
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         
@@ -92,6 +117,7 @@
     @use './styles/generals.scss' as *;
     @use './styles/partials/_variables.scss' as *;
     @use './styles/partials/_mixins.scss' as *;
+    @import url('https://fonts.googleapis.com/css2?family=Khula&display=swap');
 
     #background-container{
         background-image: url('../public/img/footer-bg.jpg');
@@ -101,7 +127,7 @@
             @include flex-between;
 
             #lists{
-                @include flex-between;
+                display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
 
@@ -137,6 +163,7 @@
                 img{
                     width: 100%;
                     vertical-align: 265px;
+                    z-index: -1;
 
                 }
             }
@@ -144,9 +171,36 @@
     }
 
     #last-container{
-
         background-color: rgb(48,48,48);
-    
+        position: relative;
+        .row{
+            align-items: center;
+
+            #sign-up a{
+                color: white;
+                font-family: $mukta;
+                border: 2px solid $brand-primary;
+                padding: .3rem .5rem;
+            }
+
+            h4{
+                color: $brand-primary;
+            }
+
+            ul{
+                @include flex-between;
+                align-items: center;
+                li{
+                    margin-left: 1rem;
+                    img{
+                        height: 1.75rem;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
 
 </style>
