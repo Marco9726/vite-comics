@@ -3,34 +3,112 @@
     export default {
         data(){ 
             return{
-                logo: '../public/img/dc-logo.png'
+                logo: '../public/img/dc-logo.png',
+                itemActive: null,
+                nav: [
+                    {
+                     label: 'CHARACTERS',
+                    },
+                    {
+                     label: 'COMICS',
+                    },
+                    {
+                     label: 'MOVIES',
+                    },
+                    {
+                     label: 'TV',
+                    },
+                    {
+                     label: 'GAMES',
+                    },
+                    {
+                     label: 'COLLECTIBLES',
+                    },
+                    {
+                     label: 'VIDEOS',
+                    },
+                    {
+                     label: 'FANS',
+                    },
+                    {
+                     label: 'NEWS',
+                    },
+                    {
+                     label: 'SHOP',
+                    }
+
+                ]
             }
-        }
+        },
+        methods: {
+            liActive(index){    
+                this.itemActive = index
+            }
+        },
         
     }
 </script>
+
+
 <template>
-    <header class="h-100-px debug">
-        <div class="main-container h-100">
-            <div class="row h-100">
+    <header class="h-100-px">
+        <div class="main-container">
+            <div class="row">
                 <div class="logo-container">
-                    <img :src="logo" alt="dc-logo" class="h-100">
+                    <img :src="logo" alt="dc-logo">
                 </div>
-                <div>ciaoo</div>
+                <nav>
+                    <ul>
+                        <li v-for="(item,index) in nav" :key="index" :class="(index === itemActive ) ? 'active' : ''" @click="liActive(index)">
+                            <span>{{ item.label }}</span>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 </template>
+
+
 <style lang="scss">
   @use './styles/generals.scss' as *;
   @use './styles/partials/_variables.scss' as *;
   @use './styles/partials/_mixins.scss' as *;
 
-    
+    header *:not(span){
+        height: 100%
+    }
+
     .row{
         @include flex-between;
-        padding: 1rem;
+        
+        .logo-container{
+            padding: 1rem;
+        }
 
+        nav ul{
+            @include flex-between;
+            font-size: .8rem;
+            font-weight: 600;
+            li{
+                margin-left: 1.5rem;
+                &:hover{
+                    cursor: pointer;
+                    color: $brand-primary;
+                    border-bottom: 3px solid $brand-primary;
+                }
+
+                &.active{
+                    color: $brand-primary;
+                    border-bottom: 3px solid $brand-primary;
+                }
+    
+                span{
+                    line-height: 100px;
+                }
+            }
+        }
         
     }
+
 </style>
