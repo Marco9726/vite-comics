@@ -1,3 +1,5 @@
+@use './styles/partials/_mixins.scss' as *;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -28,4 +30,8 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+.row {
+    @include flex-between;
 }

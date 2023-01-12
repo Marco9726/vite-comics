@@ -125,7 +125,6 @@
         height: 285px;
         overflow: hidden;
         .row{
-            @include flex-between;
 
             #lists{
                 display: flex;

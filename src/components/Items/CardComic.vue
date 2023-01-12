@@ -1,13 +1,14 @@
 <script>
-export default {
-    
-}
+    name: 'CardComic'
+    export default {
+        
+    }
 </script>
-<template lang="">
+<template >
     <div>
         
     </div>
 </template>
-<style lang="">
+<style lang="scss">
     
 </style>

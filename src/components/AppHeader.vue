@@ -64,7 +64,6 @@
     }
 
     .row{
-        @include flex-between;
         
         .logo-container{
             padding: 1rem;
