@@ -113,20 +113,17 @@
 </template>
 
 
-<style lang="scss" scoped>
-    @use './styles/generals.scss' as *;
+<style lang="scss">
     @use './styles/partials/_variables.scss' as *;
     @use './styles/partials/_mixins.scss' as *;
-    @import url('https://fonts.googleapis.com/css2?family=Khula&display=swap');
 
-    footer{
-        overflow: hidden;
-    }
+    
 
     #background-container{
         background-image: url('../public/img/footer-bg.jpg');
         background-size: cover;
         height: 285px;
+        overflow: hidden;
         .row{
             @include flex-between;
 
@@ -134,7 +131,6 @@
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;
-
                 padding-top: 2rem;
 
                 ul{
@@ -144,7 +140,6 @@
                         color: white;
                         margin-bottom: .5rem;
                     }
-
                     
                     li{
                         line-height: .8rem;
@@ -168,9 +163,6 @@
                 img{
                     width: 100%;
                     vertical-align: 265px;
-                    z-index: 0;
-                    position: relative;
-
                 }
             }
         }
@@ -178,8 +170,6 @@
 
     #last-container{
         background-color: rgb(48,48,48);
-        position: relative;
-        
         .row{
             align-items: center;
 

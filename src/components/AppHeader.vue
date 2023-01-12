@@ -56,14 +56,8 @@
 
 
 <style lang="scss">
-  @use './styles/generals.scss' as *;
   @use './styles/partials/_variables.scss' as *;
   @use './styles/partials/_mixins.scss' as *;
-
-    header{
-        position: relative;
-        z-index: 2;
-    }
 
     header *:not(span){
         height: 100%;
