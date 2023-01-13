@@ -79,13 +79,11 @@
             li{
                 &:hover{
                     cursor: pointer;
-                    color: $brand-primary;
-                    border-bottom: 3px solid $brand-primary;
+                    @include item-active
                 }
 
                 &.active{
-                    color: $brand-primary;
-                    border-bottom: 3px solid $brand-primary;
+                    @include item-active
                 }
     
                 span{

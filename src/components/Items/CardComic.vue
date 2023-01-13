@@ -3,8 +3,8 @@
     export default {
         props:{
             comics : Array,
+            // prop passata da AppContent
             comic: Object
-
         }
     }
 </script>
@@ -35,7 +35,7 @@
             height: calc(65vw / 6 - 1rem);
             overflow-y: hidden;
             margin-bottom: 1rem;
-                  
+
             img{
                 width: 100%;
             }

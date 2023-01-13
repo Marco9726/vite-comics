@@ -1,4 +1,11 @@
+@use './styles/partials/_variables.scss' as *;
+
 @mixin flex-between {
     display: flex;
     justify-content: space-between;
+}
+
+@mixin item-active {
+    color: $brand-primary;
+    border-bottom: 3px solid $brand-primary;
 }

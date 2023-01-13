@@ -25,7 +25,7 @@
                 <h2>CURRENT SERIES</h2>
             </div>
             <div class="row">
-                <!-- ciclo la componente 'CardComic' per il numero degli oggetti contenuti nell'array comics, e definisco l'oggetto nella props 'comic' che passerò alla CardComic -->
+                <!-- ciclo la componente 'CardComic' per il numero degli oggetti contenuti nell'array comics, e definisco l'oggetto nella prop 'comic' che passerò alla CardComic -->
                 <CardComic v-for="(item,index) in comics" :comic="item" :key="index" />    
             </div>
             <div class="load blue-label">

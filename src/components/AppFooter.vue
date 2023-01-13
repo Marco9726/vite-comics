@@ -6,6 +6,9 @@
         data(){
             return{
                 logo: '../public/img/dc-logo-bg.png',
+                //utilizzo l'array importato degli shop items
+                shop: shopImages,
+                // ul del background container 
                 lists: [
                     {
                         title:'DC COMICS',
@@ -53,6 +56,7 @@
                         ]
                     }
                 ],
+                // ul icone social 
                 socials: [
                     'footer-facebook.png',
                     'footer-periscope.png',
@@ -60,8 +64,6 @@
                     'footer-twitter.png',
                     'footer-youtube.png'
                 ],
-                //utilizzo l'array importato
-                shop: shopImages
             }
         }
     }
@@ -127,11 +129,12 @@
     @use './styles/partials/_variables.scss' as *;
     @use './styles/partials/_mixins.scss' as *;
 
+    // SHOP CONTAINER 
     #shop-container{
         background-color: $brand-primary;
 
         .row{
-            padding: 1.5rem;
+            padding: 2rem;
             align-items: center;
 
             img{
@@ -145,7 +148,7 @@
             }
         }
     }
-
+    //BACKGROUND CONTAINER
     #background-container{
         background-image: url('../public/img/footer-bg.jpg');
         background-size: cover;
@@ -182,7 +185,6 @@
 
             #logo-container{
                 width: 45%;
-                height: 100%;
                 display: flex;
                 align-items: center;
 
@@ -193,7 +195,7 @@
             }
         }
     }
-
+    //LAST CONTAINER
     #last-container{
         background-color: rgb(48,48,48);
         .row{
