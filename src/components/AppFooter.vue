@@ -63,7 +63,6 @@
     }
 </script>
 
-
 <template>
     <footer>
         <!-- background container  -->
@@ -77,7 +76,6 @@
                             <!-- v-for per generare gli li delle varie liste  -->
                             <li v-for="(item,index) in lists[index].list" :key="index"> 
                                 <a href="#">{{ item }}</a>
-
                             </li>
                         </ul>
                     </div>
@@ -86,7 +84,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- ultimo container scuro -->
         <div id="last-container" class="h-100-px">
@@ -102,28 +99,24 @@
                         <!-- v-for per genere le 5 immagini dei social -->
                         <li v-for="(item,index) in socials" :key="index">
                             <img :src="`/public/img/${item}`" alt="#">
-
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
-        
+        </div>      
     </footer>
 </template>
-
 
 <style lang="scss">
     @use './styles/partials/_variables.scss' as *;
     @use './styles/partials/_mixins.scss' as *;
-
-    
 
     #background-container{
         background-image: url('../public/img/footer-bg.jpg');
         background-size: cover;
         height: 285px;
         overflow: hidden;
+
         .row{
 
             #lists{
@@ -146,8 +139,7 @@
                         a{
                             color: $gray;
                             font-size: .65rem;
-                            font-family: $mukta;
-                            
+                            font-family: $mukta;                         
                         }
                     }
                 }

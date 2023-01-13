@@ -31,7 +31,6 @@
     }
 </script>
 
-
 <template>
     <header class="h-100-px">
         <div class="main-container">
@@ -53,7 +52,6 @@
         </div>
     </header>
 </template>
-
 
 <style lang="scss">
   @use './styles/partials/_variables.scss' as *;
@@ -94,8 +92,7 @@
                     line-height: 100px;
                 }
             }
-        }
-        
+        }       
     }
 
 </style>
