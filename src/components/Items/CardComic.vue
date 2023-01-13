@@ -35,16 +35,10 @@
             height: calc(65vw / 6 - 1rem);
             overflow-y: hidden;
             margin-bottom: 1rem;
-            
+                  
             img{
                 width: 100%;
             }
-        }
-        .card-label{
-             font-family: $mukta;
-             font-size: .7rem;
-             line-height: .7rem;
-             color: white;
         }
     }
 </style>

@@ -1,5 +1,7 @@
 <script>
     name: 'AppFooter'
+    // importo l'array di ogetti dal file js 
+    import shopImages from '../assets/data/ShopItems.js'
     export default {
         data(){
             return{
@@ -57,7 +59,9 @@
                     'footer-pinterest.png',
                     'footer-twitter.png',
                     'footer-youtube.png'
-                ]
+                ],
+                //utilizzo l'array importato
+                shop: shopImages
             }
         }
     }
@@ -65,6 +69,18 @@
 
 <template>
     <footer>
+        <!-- shop container  -->
+        <div id="shop-container">
+            <div class="main-container">
+                <div class="row">
+                    <!-- v-for per generare le 5 immagini dello shop  -->
+                    <div v-for="(item,index) in shop" class="img-container" :key="index">
+                        <img :src="`../public/img/${item.url}`" alt="#" :id="item.id">
+                        <span class="card-label">{{ item.label }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- background container  -->
         <div id="background-container">
             <div class="main-container h-100">
@@ -110,6 +126,25 @@
 <style lang="scss">
     @use './styles/partials/_variables.scss' as *;
     @use './styles/partials/_mixins.scss' as *;
+
+    #shop-container{
+        background-color: $brand-primary;
+
+        .row{
+            padding: 1.5rem;
+            align-items: center;
+
+            img{
+                height: 2.5rem;
+                vertical-align: middle;
+                margin-right: .5rem;
+            }
+
+            #n5{
+                height: 1.5rem;
+            }
+        }
+    }
 
     #background-container{
         background-image: url('../public/img/footer-bg.jpg');
