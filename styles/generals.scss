@@ -1,4 +1,5 @@
 @use './styles/partials/_mixins.scss' as *;
+@use './styles/partials/_variables.scss' as *;
 
 * {
     box-sizing: border-box;
@@ -34,4 +35,9 @@ a {
 
 .row {
     @include flex-between;
+}
+
+.blue-label {
+    color: white;
+    background-color: $brand-primary;
 }
